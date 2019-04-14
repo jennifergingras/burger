@@ -1,7 +1,6 @@
 var express = require('express');
 var db = require("../models");
 
-var router = express.Router();
 
 module.exports = function (app) {
   // display all burgers 
@@ -19,9 +18,3 @@ module.exports = function (app) {
   });
 
 };
-
-
-
-
-
-module.exports = router;

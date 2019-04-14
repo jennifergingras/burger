@@ -1,12 +1,38 @@
-<!-- code for what the page looks like goes here 
-
-place for instructions on what to do (i.e. type in burger - devour burger)
-
-burgers appear on one side of the page
-
-when they're eaten they appear on the other side of the page
-
-add a text input box for user burger input
-add a submit button 
-
--->
+<div class="container">
+  <header>
+    <h2 class="title">The Burger Assignment</h2>
+  </header>
+  <!-- place for instructions on what to do (i.e. type in burger - devour burger)-->
+  <div class="make-burger">
+    <h4>Are you hungry? Too bad.</h4>
+    <h3>These burgers are imaginary. Make one up and pretend to eat it!</h3>
+    <!-- add a text input box for user burger input add a submit button -->
+    <form>
+      <div class="form-group">
+        <label for="burger-Input">Make a Burger</label>
+        <input type="text" class="form-control" id="burger-input" placeholder="add your tasty burger">
+    </form>
+  </div>
+</div>
+<!-- burgers appear on one side of the page (a list) -->
+<div class="burgers-uneaten">
+  <h4>Eat these burgers!</h4>
+  <ul>
+    {{#each burger}}
+    {{#unless eaten}}
+    {{> burger/burger-state uneaten=true}}
+    {{/unless}}
+    {{/each}}
+  </ul>
+</div>
+<!--when they're eaten they appear on the other side of the page (a list)-->
+<div class="burgers-eaten">
+  <h4>Eaten Burgers!</h4>
+  <ul>
+    {{#each burger}}
+    {{#unless eaten}}
+    {{> burger/burger-state uneaten=false}}
+    {{/unless}}
+    {{/each}}
+  </ul>
+</div>

@@ -1,2 +1,14 @@
 # Burger
-Add burgers and eat burgers using MySQL, Node, Express, Handlebars and an ORM
+Add burgers and eat burgers in this full stack application
+
+## Ingredients
+* Node.js
+* Express
+* MySQL
+* Sequelize
+* Handlebars
+
+### These burgers are imaginary. Do not attempt to eat.
+
+
+

@@ -26,11 +26,17 @@ $(document).ready(function () {
       API.saveBurger(newBurger).then(function (data) {
         console.log("new burger added");
         console.log(data);
+        location.assign('/');
       });
   }
 
 
   // BUTONS
-  $()
+  $('#add-burger-btn').on('click', function () {
+    console.log("success!")
+    addBurger();
+  });
+
+
 
 });

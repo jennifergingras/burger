@@ -11,7 +11,7 @@
       <div class="form-group">
         <label for="burger-Input">Make a Burger</label>
         <input type="text" class="form-control" id="burger-input" placeholder="add your tasty burger">
-        <button id="add-burger-btn">Make</button>
+        <button id="add-burger-btn">Order</button>
     </form>
   </div>
 </div>
@@ -35,7 +35,7 @@
     {{#each burger}}
     {{#if this.devoured}}
     <h4>{{this.name}}</h4>
-    <button class="order-again">make it again!</button>
+    <button class="order-again">order again!</button>
     {{/if}}
     {{/each}}
 

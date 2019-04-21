@@ -11,28 +11,33 @@
       <div class="form-group">
         <label for="burger-Input">Make a Burger</label>
         <input type="text" class="form-control" id="burger-input" placeholder="add your tasty burger">
+        <button id="add-burger-btn">Make</button>
     </form>
   </div>
 </div>
-<!-- burgers appear on one side of the page (a list) -->
+<!-- burgers appear on one side of the page -->
 <div class="burgers-uneaten">
   <h4>Eat these burgers!</h4>
   <ul>
     {{#each burger}}
-    {{#unless eaten}}
-    {{> burger/burger-state uneaten=true}}
+    {{#unless this.devoured}}
+    <h4>{{this.burger_name}}</h4>
+    <button class="eat-btn">Eat Burger!</button>
     {{/unless}}
     {{/each}}
+
   </ul>
 </div>
-<!--when they're eaten they appear on the other side of the page (a list)-->
+<!--when they're eaten they appear on the other side of the page-->
 <div class="burgers-eaten">
   <h4>Eaten Burgers!</h4>
   <ul>
     {{#each burger}}
-    {{#unless eaten}}
-    {{> burger/burger-state uneaten=false}}
-    {{/unless}}
+    {{#if this.devoured}}
+    <h4>{{this.name}}</h4>
+    <button class="order-again">make it again!</button>
+    {{/if}}
     {{/each}}
+
   </ul>
 </div>

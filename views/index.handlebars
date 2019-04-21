@@ -22,7 +22,7 @@
     {{#each burger}}
     {{#unless this.devoured}}
     <h4>{{this.burger_name}}</h4>
-    <button class="eat-btn">Eat Burger!</button>
+    {{> burgers/burger-block eat=true}}
     {{/unless}}
     {{/each}}
 
@@ -34,8 +34,8 @@
   <ul>
     {{#each burger}}
     {{#if this.devoured}}
-    <h4>{{this.name}}</h4>
-    <button class="order-again">order again!</button>
+    <h4>{{this.burger_name}}</h4>
+    {{> burgers/burger-block eat=false}}
     {{/if}}
     {{/each}}
 

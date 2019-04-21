@@ -32,9 +32,30 @@ $(document).ready(function () {
 
 
   // BUTONS
+  // add a burger
   $('#add-burger-btn').on('click', function () {
-    console.log("success!")
     addBurger();
+  });
+
+
+  // change a burger
+  $(".change-eat-btn").on('click', function () {
+    var id = $(this).data('id');
+    var newEat = $(this).data('neweat');
+
+    var newEatState = {
+      devoured: newEat
+    };
+
+    $.ajax('/api/burgers' + id, {
+      type: "PUT",
+      data: newEatState
+    }).then(
+      function () {
+        console.log("changed eat to", newEat);
+        location.reload();
+      }
+    );
   });
 
 

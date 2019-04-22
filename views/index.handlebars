@@ -1,20 +1,23 @@
 <div class="row">
   <div class="line col-12"></div>
 </div>
-<!-- why do I need this comment for my code to show? -->
+<div class="row">
+  <div class="col-12 dotted-line">
+  </div>
+</div>
 <div class="burger-container">
   <div class="row">
     <div class="sign-title col-md-6 col-sm-8 col-xs-12">
       <img class="sign-img" src="./img/burger-sign-02.png" />
-      <!--  <div class="sign-text">
+      {{!--  <div class="sign-text">
         <h1>Burger<h1>
             <h1>Maker</h1>
-      </div> -->
+      </div> --}}
     </div>
     <div class="make-burger col">
-      <h4>Are you hungry?</h4>
+      <h3>Are you hungry?</h3>
       <p>Add a burger to the menu. Then eat it!</p>
-      <!-- add a text input box for user burger input add a submit button -->
+      {{!-- add a text input box for user burger input add a submit button --}}
       <form class="burger-input-form">
         <div class="form-group">
           <input type="text" class="form-control" id="burger-input" placeholder="add your tasty burger">
@@ -22,44 +25,47 @@
       </form>
     </div>
   </div>
-  <!-- burgers appear on one side of the page -->
-  <div class="new-container">
-    <div class="row">
-      <div class="col-md-6 col-xs-12">
-        <div class="card menu-card">
-          <div class="card-body">
-            <div class="burgers-uneaten">
-              <h4>Burger Menu!</h4>
-              <ul>
-                {{#each burger}}
-                {{#unless this.devoured}}
-                <h5>{{this.burger_name}}</h5>
-                {{> burgers/burger-block eat=true}}
-                {{/unless}}
-                {{/each}}
-              </ul>
-            </div>
+</div>
+{{!-- burgers appear on one side of the page --}}
+<div class="new-container">
+  <div class="row">
+    <div class="col-md-6 col-xs-12">
+      <div class="card menu-card">
+        <div class="card-body">
+          <div class="burgers-uneaten">
+            <h4>Burger Menu!</h4>
+            <ul>
+              {{#each burger}}
+              {{#unless this.devoured}}
+              <h5>{{this.burger_name}}</h5>
+              {{> burgers/burger-block eat=true}}
+              {{/unless}}
+              {{/each}}
+            </ul>
           </div>
         </div>
       </div>
-      <!--when they're eaten they appear on the other side of the page-->
-      <div class="col-md-6 col-xs-12">
-        <div class="card eaten-card">
-          <div class="card-body">
-            <div class="burgers-eaten col-6 col-xs-12">
-              <h4>Devoured!</h4>
-              <ul>
-                {{#each burger}}
-                {{#if this.devoured}}
-                <h4>{{this.burger_name}}</h4>
-                {{> burgers/burger-block eat=false}}
-                {{/if}}
-                {{/each}}
-              </ul>
-            </div>
+    </div>
+    {{!--when they're eaten they appear on the other side of the page--}}
+    <div class="col-md-6 col-xs-12">
+      <div class="card eaten-card">
+        <div class="card-body">
+          <div class="burgers-eaten">
+            <h4>Devoured!</h4>
+            <ul>
+              {{#each burger}}
+              {{#if this.devoured}}
+              <h4>{{this.burger_name}}</h4>
+              {{> burgers/burger-block eat=false}}
+              {{/if}}
+              {{/each}}
+            </ul>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+<footer>
+  <p id="nutrition">Nutrition Facts: These burgers are 100% imaginary and contain 0 calories.</p>
+</footer>

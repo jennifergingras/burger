@@ -1,0 +1,70 @@
+/* font-family: 'Stint Ultra Expanded', cursive;
+font-family: 'Peralta', cursive;
+font-family: 'Cherry Cream Soda', cursive;
+font-family: 'Fontdiner Swanky', cursive; */
+
+body {
+  background-color: #ffecb3;
+}
+
+.line {
+  border-top: 1rem solid #ff66b3;
+  border-bottom: .25rem solid black;
+  padding: 0;
+}
+
+.burger-container {
+  margin: auto;
+  width: 90%;
+}
+
+.new-container {
+  margin: auto;
+  width: 80%;
+}
+
+.sign-img {
+  width: 100%;
+}
+
+.make-burger {
+  font-family: 'Stint Ultra Expanded', cursive;
+  margin-top: 25%;
+}
+
+.add-burger {
+  font-family: 'Stint Ultra Expanded', cursive;
+}
+
+#add-burger-btn {
+  background-color: #ff66b3;
+  border-radius: 12px;
+  margin-top: .5rem;
+  padding: .5rem;
+}
+
+.line {
+  height: .5rem;
+  color: black;
+}
+
+.card {
+  margin-top: 1rem;
+  border-radius: 8px;
+}
+
+.menu-card {
+  background-color: #e6e600;
+}
+
+.eaten-card {
+  background-color: #ffa31a;
+}
+
+
+
+
+
+
+
+

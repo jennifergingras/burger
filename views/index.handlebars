@@ -1,43 +1,65 @@
-<div class="container">
-  <header>
-    <h2 class="title">The Burger Assignment</h2>
-  </header>
-  <!-- place for instructions on what to do (i.e. type in burger - devour burger)-->
-  <div class="make-burger">
-    <h4>Are you hungry? Too bad.</h4>
-    <h3>These burgers are imaginary. Make one up and pretend to eat it!</h3>
-    <!-- add a text input box for user burger input add a submit button -->
-    <form>
-      <div class="form-group">
-        <label for="burger-Input">Make a Burger</label>
-        <input type="text" class="form-control" id="burger-input" placeholder="add your tasty burger">
-        <button id="add-burger-btn">Order</button>
-    </form>
+<div class="row">
+  <div class="line col-12"></div>
+</div>
+<!-- why do I need this comment for my code to show? -->
+<div class="burger-container">
+  <div class="row">
+    <div class="sign-title col-md-6 col-sm-8 col-xs-12">
+      <img class="sign-img" src="./img/burger-sign-02.png" />
+      <!--  <div class="sign-text">
+        <h1>Burger<h1>
+            <h1>Maker</h1>
+      </div> -->
+    </div>
+    <div class="make-burger col">
+      <h4>Are you hungry?</h4>
+      <p>Add a burger to the menu. Then eat it!</p>
+      <!-- add a text input box for user burger input add a submit button -->
+      <form class="burger-input-form">
+        <div class="form-group">
+          <input type="text" class="form-control" id="burger-input" placeholder="add your tasty burger">
+          <button id="add-burger-btn">Order</button>
+      </form>
+    </div>
   </div>
-</div>
-<!-- burgers appear on one side of the page -->
-<div class="burgers-uneaten">
-  <h4>Eat these burgers!</h4>
-  <ul>
-    {{#each burger}}
-    {{#unless this.devoured}}
-    <h4>{{this.burger_name}}</h4>
-    {{> burgers/burger-block eat=true}}
-    {{/unless}}
-    {{/each}}
-
-  </ul>
-</div>
-<!--when they're eaten they appear on the other side of the page-->
-<div class="burgers-eaten">
-  <h4>Eaten Burgers!</h4>
-  <ul>
-    {{#each burger}}
-    {{#if this.devoured}}
-    <h4>{{this.burger_name}}</h4>
-    {{> burgers/burger-block eat=false}}
-    {{/if}}
-    {{/each}}
-
-  </ul>
+  <!-- burgers appear on one side of the page -->
+  <div class="new-container">
+    <div class="row">
+      <div class="col-md-6 col-xs-12">
+        <div class="card menu-card">
+          <div class="card-body">
+            <div class="burgers-uneaten">
+              <h4>Burger Menu!</h4>
+              <ul>
+                {{#each burger}}
+                {{#unless this.devoured}}
+                <h5>{{this.burger_name}}</h5>
+                {{> burgers/burger-block eat=true}}
+                {{/unless}}
+                {{/each}}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--when they're eaten they appear on the other side of the page-->
+      <div class="col-md-6 col-xs-12">
+        <div class="card eaten-card">
+          <div class="card-body">
+            <div class="burgers-eaten col-6 col-xs-12">
+              <h4>Devoured!</h4>
+              <ul>
+                {{#each burger}}
+                {{#if this.devoured}}
+                <h4>{{this.burger_name}}</h4>
+                {{> burgers/burger-block eat=false}}
+                {{/if}}
+                {{/each}}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

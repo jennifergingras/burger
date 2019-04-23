@@ -42,22 +42,37 @@ $(document).ready(function () {
   $(".change-eat-btn").on('click', function () {
     var id = $(this).data('id');
     var newEat = $(this).data('neweat');
-
+    console.log(id);
+    console.log(newEat);
     var newEatState = {
       devoured: newEat
     };
-
     $.ajax('/api/burgers/' + id, {
       type: "PUT",
       data: newEatState
     }).then(
       function () {
-        console.log("changed eat to", newEat);
+        console.log("changed eat to " + newEat);
         location.reload();
       }
     );
   });
 
+  // delete burger
+  $(".delete-btn").on("click", function (event) {
+    var id = $(this).data("id");
 
+    console.log(id);
+
+    //  Send the DELETE request.
+    $.ajax("/api/burgers/" + id, {
+      type: "DELETE"
+    }).then(
+      function () {
+        location.reload();
+      }
+    );
+  });
 
 });
+

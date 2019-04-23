@@ -56,7 +56,7 @@
               {{#each burger}}
               {{#if this.devoured}}
               <h4>{{this.burger_name}}</h4>
-              {{> burgers/burger-block eat=false}}
+              {{> burgers/burger-block id=this.id eat=false}}
               {{/if}}
               {{/each}}
             </ul>

@@ -19,19 +19,15 @@ module.exports = function (app) {
   });
 
 
-  // change burger state
+  // change burger state from uneaten to eaten
   app.put("/api/burgers/:id", function (req, res) {
-    // var condition = {
-    //   where: req.params.id
-    // };
-    console.log("========================================")
-    console.log(req.params.id)
-    console.log("========================================")
-    // console.log("condition", condition);
+    // console.log("========================================")
+    // console.log(req.params.id)
+    // console.log("========================================")
 
-    db.Burger.update(
-    {devoured: req.body.devoured}, 
-    {where: {id: req.params.id}}).then(function (result) {
+    db.Burger.update({ devoured: req.body.devoured }, {
+      where: { id: req.params.id }
+    }).then(function (result) {
       console.log("Got inside the db call");
       if (result.changedRows == 0) {
         // If no rows were changed, then the ID must not exist, so 404
@@ -43,19 +39,20 @@ module.exports = function (app) {
     });
   });
 
+  // delete the burger
   app.delete("/api/burgers/:id", function (req, res) {
-    var condition = "id = " + req.params.id;
 
-    db.Burger.delete(condition, function (result) {
+    db.Burger.destroy({
+      where: { id: req.params.id }
+    }).then(function (result) {
       if (result.affectedRows == 0) {
         // If no rows were changed, then the ID must not exist, so 404
         return res.status(404).end();
       } else {
-        res.status(200).end();
+        res.json(result);
       }
     });
   });
-
 
 };
 

@@ -34,7 +34,7 @@
         <div class="card-body">
           <div class="burgers-uneaten">
             <h4>Burger Menu!</h4>
-            <ul>
+            <ul class="burger-list">
               {{#each burger}}
               {{#unless this.devoured}}
               <h5>{{this.burger_name}}</h5>
@@ -52,10 +52,10 @@
         <div class="card-body">
           <div class="burgers-eaten">
             <h4>Devoured!</h4>
-            <ul>
+            <ul class="burger-list">
               {{#each burger}}
               {{#if this.devoured}}
-              <h4>{{this.burger_name}}</h4>
+              <h5>{{this.burger_name}}</h5>
               {{> burgers/burger-block id=this.id eat=false}}
               {{/if}}
               {{/each}}

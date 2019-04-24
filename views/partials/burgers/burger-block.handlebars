@@ -1,4 +1,4 @@
 <button class="change-eat-btn" data-id="{{id}}" data-neweat="{{eat}}">
   {{#if eat}}Eat This Burger!{{else}}Order Again{{/if}}
 </button>
-<button class="delete-btn" data-id="{{this.id}}">DELETE!</button>
+{{#unless eat}}<button class="delete-btn" data-id="{{this.id}}">DELETE!</button>{{/unless}}
